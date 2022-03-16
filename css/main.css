@@ -1,0 +1,815 @@
+ /*Specifications*/ 
+@font-face {
+	font-family: 'GillSansMT';
+	src: url('../fonts/GillSansMT-Regular.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/GillSansMT-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('../fonts/GillSansMT-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/GillSansMT-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+		url('../fonts/GillSansMT-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/GillSansMT-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'GillSansMT';
+	src: url('../fonts/GillSansMT-Bold.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/GillSansMT-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('../fonts/GillSansMT-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/GillSansMT-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+		url('../fonts/GillSansMT-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/GillSansMT-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+	font-weight: bold;
+}
+
+
+
+
+body {
+	font-family: 'GillSansMT';
+	font-size: 20px;
+	font-weight: normal;
+}
+
+ul, li {
+	display: block; /*remove dot*/
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: 26272d;
+	font-weight: bold;
+	line-height: 1.2em;
+}
+
+p {
+	color: #8c8f94; 
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #8c8f94;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+}
+
+input, button:focus {
+	outline: none;
+}
+
+button,
+button:hover,
+button:focus {
+	font-family: inherit; /* button, input не наследуют шрифт от боди*/
+	cursor: pointer;
+	border: none;
+}
+
+.container {
+	max-width: 1110px;
+}
+
+.btn {
+	display: block;
+	font-size: 16px;
+	border-radius: 21px;
+}
+
+.btn-blue {
+	background: #267df4;
+	color: #fff;
+	transition: background 0.5s ease;
+}
+
+.btn-blue:hover {
+	background: #005bd8;
+	color: #fff;
+	box-shadow: 0 8px 20px rgb(20 87 207 / 25%);
+	transition: background 0.5s ease;
+}
+
+.btn-blue:active {
+	background: #0346a1;
+	box-shadow: none;
+}
+
+.btn-transparent {
+	background-color: transparent;
+	color: #26272d;
+	border: solid 1px #26272d;
+	font-size: 17px;
+	transition: all 0.5s ease;
+}
+
+.btn-transparent:hover {
+	background: #e2e8f3;
+	border: none;
+	color: #26272d;
+	box-shadow: 0 3px 15px rgb(20 87 207 / 40%);
+	transition: all 0.5s ease;
+}
+
+.btn-transparent:active {
+	background: #dfe3f4;
+	box-shadow: none ;  
+}
+
+.app-screen {
+	transition: all 0.5s ease;
+}
+
+.app-screen:hover {
+	transform: scale(1.02) ;
+	-webkit-transform: scale(1.02) ;
+	-moz-transform: scale(1.02) ;
+}
+
+
+
+
+/* Header Nav */
+.header {
+	background: url("../img/bg-header.jpg") no-repeat center center / cover;  /*не забывать ковычки на путях*/
+	max-height: 1000px;
+	padding-top: 44px;
+	z-index: 10;
+}
+
+.header-burger span {
+	background: #1b1c1e;
+	width: 20px;
+	height: 2px;
+	display: inline-block;
+	position: absolute;
+	left: 0;
+}
+
+.header-burger {
+	background: none;
+	width: 20px;
+	height: 20px;
+	position: relative;
+}
+
+.header-burger span::before {	
+	content: '';
+	background: #1b1c1e;
+	width: 20px;
+	height: 2px;
+	position: absolute;
+	left: 0;
+	bottom: 5;
+	cursor: pointer;
+}
+
+.header-burger span::after {
+	content: '';
+	background: #1b1c1e;
+	width: 20px;
+	height: 2px;
+	position: absolute;
+	left: 0;
+	top: 5;
+	cursor: pointer;
+}
+
+.menu__link {
+	color: #26272d;
+	font-size: 16px;
+	transition: color 0.5s ease;
+}
+
+.menu__link:hover {
+	color: #9ca2ae;
+	transition: color 0.5s ease;
+}
+
+.menu__item:not(:last-child) {
+	margin-right: 40px;
+}
+
+.logo {
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+	margin:  0 auto;
+}
+
+.menu-secondary {
+	margin-left: 60px;
+}
+
+.header-btn {
+	width: 132px;
+	height: 42px;
+}
+
+.header-btn::before {
+	content:'';
+	display: block;
+	background: url("../img/apple-icon.png");
+	width: 18px;
+	height: 20px;
+	margin-right: 13px;
+	transition: all 0.5s ease;
+}
+
+
+/* Header Offer */
+.offer {
+	max-width: 783px;
+	text-align: center;
+	margin-top: 105px;
+}
+
+.offer__title {
+	font-size: 62px;
+	margin-bottom: 30px;
+}
+
+.offer__btn {
+	border-radius: 25px;
+	width: 205px;
+	height: 49px;
+	margin-top: 55px;
+}
+
+.offer__btn::before {
+	content:'';
+	display: block;
+	background: url("../img/play-icon.png");
+	width: 10px;
+	height: 10px;
+	margin-right: 20px;
+	transition: all 0.5s ease;
+}
+
+.header-img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	margin: 35px auto 0;
+		z-index: 1;
+}
+
+
+/* Services Section */
+.services-section {
+	padding-top: 117px;
+	background: #fff;
+	position: relative;
+	z-index: 10;
+}
+
+.lock-icon {
+	display: block;
+	width: 42px;
+	height: 51px;
+}
+
+.clock-icon {
+	display: block;
+	width: 41px;
+	height: 47px;
+}
+
+.services {
+	max-width: none;
+}
+
+.services__img {
+	margin-bottom: 45px;
+}
+
+.services__title {
+	margin-bottom: 34px;
+	font-size: 26px;
+}
+
+.services__wrapper {
+	font-size: 18px;
+}
+
+.services__text:not(:last-of-type) {
+	margin-bottom: 18px; 
+}
+
+/* Hack Section */
+.hack-section {
+	padding-top: 90px;
+}
+
+.hack-img {
+	display: block;
+	width: 110%;
+	max-width: 745px;
+	margin-left: -120px;
+}
+
+.hack-title{
+	font-size: 42px;
+	margin-top: 20px;
+	margin-bottom: 70px;
+}
+
+.hack-title span {
+	display: block;
+}
+
+.hack-text:not(:last-of-type){
+	margin-bottom: 23px;
+}
+
+.hack-btns {
+	margin-top: 69px;
+}
+
+.hack-btn_primary {
+	width: 200px;
+	height: 42px;
+	margin-right: 20px;
+	transition: all 1.5s ease;
+}
+
+.hack-btn_primary::after {
+	content:'';
+	display: block;
+	background: url('../img/arrow-icon.png');
+	width: 13px;
+	height: 12px;
+	margin-left: 48px;
+	transition: all 1.5s ease;
+}
+
+.hack-btn_primary:hover {
+	font-size: 18px;
+}
+
+.hack-btn_primary:hover::after {
+	margin-left: 10px;
+}
+
+.hack-btn_secondary {
+	width: 142px;
+	height: 42px;
+}
+
+/* Location */
+.location-section {
+ 	padding-top: 68px;
+ 	padding-bottom: 123px;
+}
+
+.location-title {
+	font-size: 42px;
+	margin-bottom: 58px;
+}
+
+.location-text:not(:last-of-type) {
+	margin-bottom: 20px
+}
+
+.location-wrapper {
+	max-width: none;
+	margin-bottom: 64px;
+}
+
+.partners__subtitle {
+	font-size: 12px;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	margin-bottom: 28px;
+}
+
+.partners__links li:not(:last-child) {
+	margin-right: 30px;
+}
+
+.location-img {
+	display: block;
+	widows: 110%;
+	max-width: 627px;
+	margin-top: 34px;
+	margin-left: 60px;
+}
+
+.partners__links {
+	opacity: 1;
+	transition: opacity 0.5s ease;
+} 
+ 
+.partners__links a:hover {
+	opacity: 0.5;
+	transition: opacity 0.5s ease;
+} 
+
+/*Footer*/
+.footer {
+	padding-bottom: 208px;
+	padding-top: 123px;
+}
+
+.footer-logo {
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+}
+
+.footer-text {
+	font-size: 14px;
+    margin-top: 28px;
+    line-height: 1.7em;
+    letter-spacing: 0.01em;
+    margin-bottom: 22px;
+    max-width: 240px;
+}
+
+.footer-title {
+	font-size: 12px;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	margin-bottom: 19px;
+	max-width: 100px;
+}
+
+.appstore-button {
+	max-width: 140px;
+	transition: opacity 0.5s ease;
+}
+
+.appstore-button:hover {
+	opacity: 0.7;
+	transition: opacity 0.5s ease;
+}
+
+.footer-list {
+	max-width: 102px;
+}
+
+.footer-list a {
+	font-size: 16px;
+	max-width: 102px;
+}
+
+.footer-list li:not(:last-child) {
+	margin-bottom: 13px;
+}
+
+
+
+
+/*  Responsive  */
+
+/* Large devices (desktops, less than 1400px)*/
+@media (max-width: 1399.98px) { 
+	.hack-img {
+		margin-left: -92px;
+	}
+}
+
+
+@media (max-width: 1199.98px) { 
+	.menu-secondary {
+		margin-left: 30px;
+	}
+
+	.offer {
+		width: 100%;
+	}
+
+	.hack-img {
+		width: 100%;
+		margin-left: -40px;
+	}
+
+	.location-img {
+		width: 90%;
+	}
+}
+
+/* Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) {
+	.services-section {
+    	padding-top: 14px;
+    }
+
+    .menu__link {
+    	font-size: 15px;
+    }
+
+    .menu-secondary  {
+    	display: none;
+    }
+
+	.offer__title {
+		font-size: 56px;
+	}
+
+	.hack-img {
+		margin: 0 auto;
+		margin-top: 70px;
+	}
+
+	.hack-section {
+    	padding-top: 30px;
+	}
+
+	.hack-title span {
+		display: inline;
+	}
+
+	.location-title span {
+		display: inline;
+	}
+
+	.location-img {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 80px;
+	}
+
+	.services {
+		margin-top: 70px;
+	}
+
+	.location-title {
+		margin-top: 45px;
+	}
+
+	.location-section {
+    	padding-bottom: 100px;
+	}
+
+	.footer {
+		padding-top: 60px;
+		padding-bottom: 105px;
+	}
+
+	.footer-logo {
+		margin: 0 auto;
+	}
+
+	.footer-text,
+	.footer-title,
+	.footer-list {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	.appstore-button {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.title-about,
+	.title-support {
+		margin-top: 87px;
+	}
+}
+
+/* Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px) { 
+	.header {
+		height: 151%;
+	}
+
+	.menu {
+		display: none;
+	}
+
+	.offer__title {
+		font-size: 42px;
+	}
+
+	.offer__text {
+		font-size: 19px;
+	}
+}
+
+/* (537px) - 576px */
+@media (max-width: 575.98px) {
+	.header-btn {
+		display: none !important;
+	}
+
+	.btn {
+		width: 100%;
+	}
+
+	.hack-img {
+		margin-top: 40px;
+	}
+
+	.hack-btn_primary {
+		margin-bottom: 15px;
+	}
+
+	.hack-title,
+	.location-title {
+		font-size: 32px;
+	}
+
+	.partners__subtitle {
+		margin-left: auto;
+		margin-right: auto;
+		width: 71px;
+	}
+
+	.partners__links {
+		justify-content: space-evenly;
+	}
+
+	.title-learn {
+		margin-top: 87px;
+	}
+}
+
+/* (469px) - 537px */
+@media (max-width: 536.98px) {
+	.location-section {
+    	padding-bottom: 70px;
+	}
+
+	.header {
+    	height: 155%;
+	}
+
+	.location-title {
+		margin-top: 10px;
+	}
+}
+
+/* (448px) - 469px */
+@media (max-width: 468.98px) {
+	.header {
+    	height: 150%;
+	}
+}
+
+/* (387px) - 448px */
+@media (max-width: 447.98px) {
+	.header {
+    	height: 150%;
+	}
+}
+
+@media (max-width: 437.98px) {
+	.header {
+    	height: 145%;
+	}
+}
+
+/* Extra small:  (346px) - 387px */
+@media (max-width: 386.98px) {
+	.header {
+    	height: 145%;
+	}
+
+	.footer {
+		padding-top: 25px;
+		padding-bottom: 60px;
+	}
+}
+
+@media (max-width: 376.98px) {
+	.header {
+    	height: 140%;
+	}
+}
+
+/* (310px) - 346px */
+@media (max-width: 345.98px) {
+	.header {
+    	height: 137%;
+	}
+
+	.partners__links {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.partners__links li:not(:last-child) {
+		margin-bottom: 30px;
+	}
+}
+
+/* (280px) - 310px */
+@media (max-width: 309.98px) {
+	.header {
+    	height: 144%;	
+	}
+}
+
+
+
+
+
+
+
+	
+
+
+
+/* 
+
+👍 Алгоритм работы по созданию отзывчивости:
+
+	1. Прописать <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> в секцию <head>
+
+	2. Вставить шаблон медиа-запросов в конец CSS-файла
+
+	3. Проверять работоспособность и отсутствие горизонтального скролла на нижней границе каждого диапазона
+
+	4. Перестраиваем контент, скрываем лишнее, заменяем на подходящее 
+
+	5. Не забываем нажимать CTRL+0 при переходе между брейкпоинтами
+
+*/
+
+
+
+/* Large: 992px - 1199px */
+/*@media (max-width: 1199px) {
+	.container {
+		max-width: 960px;
+	}
+}*/
+
+/* Medium: 768px - 991px */
+/*@media (max-width: 991px) {
+	.container {
+		max-width: 720px;
+	}
+}*/
+
+/* Small: 576px - 767px */
+
+
+/* Extra small: 0px (320px) - 575px */
+/*@media (max-width: 575px) {
+	.container {
+		padding: 0 15px;
+	}
+}*/
+
+
+
+
+/*  ➗ Формула написания медиа-запросов  */
+
+/*@media условие {
+
+}*/
+
+/*  📱 Типы устройств: all, screen, print  */
+
+/*@media screen {
+
+}*/
+
+/*  ➕ Операторы: and, ",", not  */
+
+/*@media screen and (max-width: 1000px) {
+	.element {
+		background: red;
+	}
+}
+
+@media screen, (max-width: 800px) {
+	.element {
+		background: green;
+	}
+}
+
+@media screen not (max-width: 500px) {
+	.element {
+		background: blue;
+	}
+}*/
+
+/*  🔶 Медиа-функции:
+
+	- width   min-width   max-width
+	- height  min-height  max-height
+	- orientation  (portrait/landscape)
+	- resolution  min-resolution  max-resolution  (dpi, dpcm, dppx)  /  1dppx = 96dpi
+
+*/
+
+/*@media (min-width: 400px) {
+	.element {
+		background: yellow
+	}
+}
+
+@media (orientation: landscape) and (min-resolution: 2dppx) {
+	.element {
+		background: url('../img/image@2px.jpg')
+	}
+}
+
